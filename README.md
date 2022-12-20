@@ -4,6 +4,19 @@
 
 ![how it works](how.png)
 
+## Flags
+
+* `-year`, `-month`: defines the month of the SAFT file; if not set fetches last month.
+* `-destination`: where to copy the file
+* `-month-year-pattern`: used to append the year and month to the destination folder; for example, the default value is `%s-%s` which will make the file being copied to `/home/pi/accounting/2022-10`.
+
+## Environment variables
+
+It uses the following environment variables to access the Invoicexpress API:
+
+* `INVOICE_ACCOUNT_NAME`
+* `INVOICE_API_KEY`
+
 ## Build for Raspberry PI
 
 ```shell
