@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -69,7 +69,7 @@ func main() {
 			log.Fatalf("error requesting SAFT: %s", err)
 		}
 
-		body, err := ioutil.ReadAll(res.Body)
+		body, err := io.ReadAll(res.Body)
 		if err != nil {
 			log.Fatalf("error reading SAFT request response: %s", err)
 		}
@@ -91,7 +91,7 @@ func main() {
 				log.Fatalf("error requestion SAFT download: %s", err)
 			}
 
-			body, err := ioutil.ReadAll(res.Body)
+			body, err := io.ReadAll(res.Body)
 			if err != nil {
 				log.Fatalf("error downloading SAFT: %s", err)
 			}
